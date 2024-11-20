@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>MovieList</title>
+		<link rel="stylesheet" href="/asset/css/index.css" />
+		<link rel="stylesheet" href="/asset/css/common.css" />
+	</head>
+	<body>
+		<div class="page-top">
+			<div>Movie Reservation</div>
+			<form>
+				<input type="radio" id="dark-button" name="mode-button" />
+				<label for="dark-button">DARK</label>
+				<input type="radio" id="white-button" name="mode-button" />
+				<label for="white-button">WHITE</label>
+			</form>
+		</div>
+		<div class="movie-wrap">
+			<div class="contents">
+				<form class="toggle">
+					<input type="checkbox" id="toggle-button" />
+					<label for="toggle-button" class="button"></label>
+					<span>VIEW</span>
+				</form>
+				<div id="themeWrap">
+					<ul>
+						<li>
+							<a href="#"><span>멜로</span></a>
+						</li>
+						<li>
+							<a href="#"><span>공포</span></a>
+						</li>
+						<li>
+							<a href="#"><span>코미디</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="movielist-wrap">
+				<ul id="movie-list">
+					<li>
+						<div><img src="/img/movie/interstella.jpg" /></div>
+					</li>
+					<li>
+						<div><img src="/img/movie/interstella.jpg" /></div>
+					</li>
+					<li>
+						<div><img src="/img/movie/interstella.jpg" /></div>
+					</li>
+					<li>
+						<div><img src="/img/movie/interstella.jpg" /></div>
+					</li>
+					<li>
+						<div><img src="/img/movie/interstella.jpg" /></div>
+					</li>
+					<li>
+						<div><img src="/img/movie/interstella.jpg" /></div>
+					</li>
+				</ul>
+			</div>
+			<div id="movieInfoLayor">
+				<ul>
+					<li>
+						<div>
+							<a href=""><img src="/img/movie/interstella.jpg" /></a>
+						</div>
+					</li>
+					<li>
+						<div class="event-movie">
+							<p>2021년 12월 연말 무료 시사회</p>
+							<a href=""><img src="/img/movie/interstella.jpg" /></a>
+						</div>
+						<div class="free-movie">
+							<p>올해 가장 보고싶은 영화 선정 무료 영화</p>
+							<a href=""><img src="/img/movie/interstella.jpg" /></a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	const body = document.querySelector("body");
+	const pageTop = document.querySelector(".page-top");
+	const darkBtn = document.querySelector("#dark-button");
+	const whiteBtn = document.querySelector("#white-button");
+	console.log(body);
+	whiteBtn.addEventListener("click", () => {
+		body.style.background = "white";
+		body.style.color = "black";
+		pageTop.style.color = "white";
+	});
+	darkBtn.addEventListener("click", () => {
+		body.style.background = "#383838";
+		body.style.color = "white";
+	});
+</script>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Cinema reservation</title>
+		<link rel="stylesheet" href="/asset/css/index.css" />
+		<link rel="stylesheet" href="/asset/css/common.css" />
+	</head>
+	<body>
+		<div class="page-top">
+			<div>Movie Reservation</div>
+			<form>
+				<input type="radio" id="dark-button" name="mode-button" />
+				<label for="dark-button">DARK</label>
+				<input type="radio" id="white-button" name="mode-button" />
+				<label for="white-button">WHITE</label>
+			</form>
+		</div>
+		<div class="cinema-wrap">
+			<div class="cinema-name">
+				<h2>
+					<span>AKIRA</span>
+					<span>아키라</span>
+					<P>예약안내</P>
+				</h2>
+				<div><img src="/img/movie/AKIRA_(1988_poster).jpg" /></div>
+			</div>
+			<div class="cinema-info">
+				<form class="cinema-form">
+					<p class="text">Cinema</p>
+					<select>
+						<option value="Select Cinema">Select Cinema</option>
+						<option value="Seoul">Seoul</option>
+						<option value="Incheon">Incheon</option>
+						<option value="Gyeonggido">Gyeonggido</option>
+						<option value="Busan">Busan</option>
+					</select>
+					<div class="number-code">
+						<p class="text-2">Phone Number</p>
+						<label for="phone-number"><input type="tel" id="phone-number" placeholder="Please input your phone number"></label>
+						<button type="submit">CODE</button>
+					</div>
+					<div class="code-number">
+						<label for="code">
+							<input type="tel" id="code" placeholder="Code (ex: 4599)"></input>
+						</label>
+					</div>
+				</form>
+				<div class="seat-position">
+					<p class="text-3">Seat Position</p>
+					<div></div>
+				</div>
+				<!-- 스크립트 사용 -->
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	const body = document.querySelector("body")
+	const pageTop = document.querySelector(".page-top");
+	const darkBtn = document.querySelector("#dark-button");
+	const whiteBtn = document.querySelector("#white-button");	
+	const text = document.querySelector(".text");
+	const text2 = document.querySelector(".text-2");
+	const text3 = document.querySelector(".text-3");
+	console.log(text3);
+
+	whiteBtn.addEventListener("click", () => {
+		body.style.background = "white";
+		body.style.color = "black";
+		pageTop.style.color = "white";
+		text.style.color = "black";
+		text2.style.color = "black";
+		text3.style.color = "black";
+	});
+	darkBtn.addEventListener("click", () => {
+		body.style.background = "#383838";
+		body.style.color = "white"; 
+		text.style.color ="white";
+		text2.style.color = "white";
+		text3.style.color = "white";
+	});
+
+	// let selcetArray = [
+	// 	{area : 'Seoul', option : ['CGV-GangNam', 'CGV-MyeongDong', 'MEGABOX-GangNam', 'MEGABOX-ShinCheon']},
+	// 	{area : 'Incheon', option : ['CGV-Incheon']},
+	// 	{area : 'Gyeonggido', option : ['CGV-Iljik']},
+	// 	{area : 'Busan', option : ['CGV-Busan']},
+	// ];
+	// const selectBox = document.getElementsByTagName("select");
+	// const optionSeoul = document.querySelector("option[value=Seoul]")
+	// const optionIncheon = document.querySelector("option[value=Incheon]")
+	// const optionGyeongi = document.querySelector("option[value=Gyeonggido]")
+	// const optionBusan = document.querySelector("option[value=Busan]")
+	// optionSeoul.addEventListener("click", () =>{
+
+	// })
+	
+
+	const phoneNumber = document.querySelector("#phone-number")
+	const letter = /^[0-9]{11}$/
+	const submitBtn = document.querySelector("button[type=submit]")
+
+	submitBtn.addEventListener('click', () =>{
+		const phoneNumberValue = phoneNumber.value;
+		if(!/^[0-9]{11}$/.test(phoneNumberValue)){
+			alert("11자리의 숫자만 입력가능합니다");
+			return false;
+		}
+	})
+</script>
